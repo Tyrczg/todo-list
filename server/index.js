@@ -1,7 +1,9 @@
 const Koa = require('koa')
 const serve = require('koa-static')
+const logger = require('koa-logger')
 
 const app = new Koa()
+app.use(logger())
 const port = process.env.PORT || 3000
 
 app.use(serve('client'))

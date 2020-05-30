@@ -12,11 +12,11 @@ router.post('/', async (ctx) => {
   ctx.status = 200
 })
 
+
 router.delete('/', async (ctx) => {
-  ctx.status = 501
+  await store.deleteTask(ctx.request.query)
+  ctx.status = 200
 })
-
-
 
 
 module.exports = router
